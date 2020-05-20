@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html style="background-image: url('https://economictimes.indiatimes.com/thumb/msid-72903571,width-1200,height-900,resizemode-4,imgsize-186055/rupee-getty-1200.jpg?from=mdr') ; background-size: 100% 120%">
+<head>	
+	<title>Monthly Expense Manager
+</title>
+<link href="style.css" rel="stylesheet">
+
+</head>
+	
+	
+	<center>
+	
+	<body>
+
+<div>
+	<input type="text" name="Name" id="Name" class="Name" placeholder="Name">
+	
+	<input type="number" name="Age" id="Age" class="Age" placeholder="Age">
+	
+	<input type="number" name="Mobile" id="Mobile" class="Mobile" placeholder="Mobile No">
+	
+	<input type="text" name="City" id="City" class="City" placeholder="City">
+	
+	<input type="text" name="Email ID" id="EmailID" class="EmailID" placeholder="Email ID">
+</div>
+	
+	<div style="font-size: 36px;font-weight: bold;" >Enter your Contact Details and Monthly Financials
+	</div>
+	
+
+
+	
+	<div class="div1">	
+		<input type="number" name="income1" id="income1" class="income" placeholder="Salary">	
+	
+	<input type="number" name="income2" id="income2" class="income" placeholder="Interest Income from Fixed Deposits">
+	
+	<input type="number" name="income3" id="income3" class="income" placeholder="Income from Debt Mutual Funds">
+	
+	<input type="number" name="income4" id="income4" class="income" placeholder="Income from Gold Savings Bond">
+	
+	<input type="number" name="income5" id="income5" class="income" placeholder="Income from Freelancing">
+	
+	<input type="number" name="income6" id="income6" class="income" placeholder="Interest Income from Loans">
+	
+	<input type="number" name="income7" id="income7" class="income" placeholder="Rental Income">
+	
+	<input type="number" name="income8" id="income8" class="income" placeholder="Average Business Income">
+	
+	<input type="number" name="income9" id="income9" class="income" placeholder="Total other Income">	
+
+</div>
+
+	
+	<div class="div2">		
+		<input type="number" name="Expense1" id="Expense1" class="Expense" placeholder="House Rental">
+		
+		<input type="number" name="Expense2" id="Expense2" class="Expense" placeholder="Education Expense">
+		
+		<input type="number" name="Expense3" id="Expense3" class="Expense" placeholder="other Household Expenses">
+		
+		<input type="number" name="Expense4" id="Expense4" class="Expense" placeholder="Total Insurance Premiums">
+		
+		<input type="number" name="Expense5" id="Expense5" class="Expense" placeholder="Total Leisure Expenses">
+		
+		<input type="number" name="Expense6" id="Expense6" class="Expense" placeholder="Business/Personal Loan EMI">
+		
+		<input type="number" name="Expense7" id="Expense7" class="Expense" placeholder="House EMI">
+		
+		<input type="number" name="Expense8" id="Expense8" class="Expense" placeholder="Total other Loan EMI's">
+		
+		<input type="number" name="Expense9" id="Expense9" class="Expense" placeholder="Total other Expenses">	
+	</div>	
+
+	
+	<button id="button" class="button" style="background: blue; font-size: 25px;font-weight: bold;color: white">Click me to get free Analysis & Suggestions
+	</button>
+	
+	<div id="output" class="output" style="width: 1323px;height: 150px;background: pink">
+	</div>
+
+</body>
+
+</center>
+
+<script type="text/javascript">
+
+	document.getElementById("button").addEventListener("click",Analysis_Suggestions) ;
+
+		function Analysis_Suggestions()
+		{
+var income1 = document.getElementById('income1').value 
+var income2 = document.getElementById('income2').value 
+var income3 = document.getElementById('income3').value 
+var income4 = document.getElementById('income4').value 
+var income5 = document.getElementById('income5').value 
+var income6 = document.getElementById('income6').value 
+var income7 = document.getElementById('income7').value 
+var income8 = document.getElementById('income8').value 
+var income9 = document.getElementById('income9').value 
+var total_income = Number(income1)+Number(income2)+Number(income3)+Number(income4)+Number(income5)+Number(income6)+Number(income7)+Number(income8)+Number(income9)
+var expense1 = document.getElementById('Expense1').value 
+var expense2 = document.getElementById('Expense2').value 
+var expense3 = document.getElementById('Expense3').value 
+var expense4 = document.getElementById('Expense4').value 
+var expense5 = document.getElementById('Expense5').value 
+var expense6 = document.getElementById('Expense6').value 
+var expense7 = document.getElementById('Expense7').value 
+var expense8 = document.getElementById('Expense8').value 
+var expense9 = document.getElementById('Expense9').value 
+var total_expense = Number(expense1)+Number(expense2)+Number(expense3)+Number(expense4)+Number(expense5)+Number(expense6)+Number(expense7)+Number(expense8)+Number(expense9)
+var Analysis_Number = total_income/total_expense*100
+var Analysis = ""
+var name = document.getElementById('Name').value
+var balance = total_income - total_expense ;
+
+if(Analysis_Number
+	<=100 && Analysis_Number>75)
+{
+	var Analysis =  "Your total monthly income is" + " " + ":" + " " + "₹" + " " + total_income + " " + "/-" + " " + "," + " " + "Your total monthly expenses are" + " " + ":" + " " + "₹" + " " +  total_expense + " " + "/-"  + " " + "and" + " " + "Your total monthly savings is" + " " + ":" + " " + "₹" + " " +  balance + " " + "/-"  + " " + "." + " " + "So" + " " + name + " " + "," + " " + "You Spend Too Much , how long can you continue with that ?"
+}
+
+else if(Analysis_Number>50 && Analysis_Number
+	<=75)
+{
+	var Analysis =  "Your total monthly income is" + " " + ":" + " " + "₹" + " " + total_income + " " + "/-" + " " + "," + " " + "Your total monthly expenses are" + " " + ":" + " " + "₹" + " " +  total_expense + " " + "/-"  + " " + "and" + " " + "Your total monthly savings is" + " " + ":" + " " + "₹" + " " +  balance + " " + "/-"  + " " + "." + " " + "So" + " " + name + " " + "," + " " + "Believe me, you are in serious trouble , did you realize it yourself ?"
+}
+
+
+else if(Analysis_Number
+	<=50)
+{
+	var Analysis =  "Your total monthly income is" + " " + ":" + " " + "₹" + " " + total_income + " " + "/-" + " " + "," + " " + "Your total monthly expenses are" + " " + ":" + " " + "₹" + " " +  total_expense + " " + "/-"  + " " + "and" + " " + "Your total monthly savings is" + " " + ":" + " " + "₹" + " " +  balance + " " + "/-"  + " " + "." + " " + "So" + " " + name + " " + "," + " " + "Soon you and your Family are going to be in lot of troubles , immediately stop all un-necessary expenses. You can ask us for advice on our twitter handle"
+}
+
+else if(Analysis_Number>100 && Analysis_Number
+	<=125)
+{
+	var Analysis =  "Your total monthly income is" + " " + ":" + " " + "₹" + " " + total_income + " " + "/-" + " " + "," + " " + "Your total monthly expenses are" + " " + ":" + " " + "₹" + " " +  total_expense + " " + "/-"  + " " + "and" + " " + "Your total monthly savings is" + " " + ":" + " " + "₹" + " " +  balance + " " + "/-"  + " " + "." + " " + "So" + " " + name + " " + "," + " " + "You are doing average and there is a scope for improvement"
+}
+
+else if(Analysis_Number>125 && Analysis_Number
+	<=150)
+{
+	var Analysis =  "Your total monthly income is" + " " + ":" + " " + "₹" + " " + total_income + " " + "/-" + " " + "," + " " + "Your total monthly expenses are" + " " + ":" + " " + "₹" + " " +  total_expense + " " + "/-"  + " " + "and" + " " + "Your total monthly savings is" + " " + ":" + " " + "₹" + " " +  balance + " " + "/-"  + " " + "." + " " + "So" + " " + name + " " + "," + " " + "You are doing good but there is little more scope for improvement"
+}
+
+else if(Analysis_Number>150 && Analysis_Number
+	<200)
+{
+	var Analysis =  "Your total monthly income is" + " " + ":" + " " + "₹" + " " + total_income + " " + "/-" + " " + "," + " " + "Your total monthly expenses are" + " " + ":" + " " + "₹" + " " +  total_expense + " " + "/-"  + " " + "and" + " " + "Your total monthly savings is" + " " + ":" + " " + "₹" + " " +  balance + " " + "/-"  + " " + "." + " " + "So" + " " + name + " " + "," + " " + "You are doing very good , now start investing , just savings is for losers"
+}
+
+else if(Analysis_Number>=200)
+{
+	var Analysis = "Your total monthly income is" + " " + ":" + " " + "₹" + " " + total_income + " " + "/-" + " " + "," + " " + "Your total monthly expenses are" + " " + ":" + " " + "₹" + " " +  total_expense + " " + "/-"  + " " + "and" + " " + "Your total monthly savings is" + " " + ":" + " " + "₹" + " " +  balance + " " + "/-"  + " " + "." + " " + "So" + " " + name + " " + "," + " " + "You are the best, everyone should learn from you , now start doing diversified investments for regular cash flow because there are bad times too"
+}
+
+
+var outputtext = document.createTextNode(Analysis)
+var outputh1 = document.createElement('h1')
+var output = document.getElementById('output')
+outputh1.appendChild(outputtext)
+output.appendChild(outputh1)
+
+
+
+		}
+
+
+
+
+</script>
+
+
+</html>
